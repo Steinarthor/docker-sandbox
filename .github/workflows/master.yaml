@@ -7,12 +7,12 @@ on:
     branches: [master]
 
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: Test
+      - name: Testing
         uses: actions/setup-node@v3
       - run: npm ci
       - run: npm test
