@@ -1,7 +1,7 @@
 FROM node:alpine
 WORKDIR /app
 COPY ./package.json ./package-lock.json ./
-RUN npm ci
-COPY . .
-EXPOSE 3000
-CMD [ "npm", "run", "dev" ]
+RUN npm ci && npm run build
+COPY ./dist .
+EXPOSE 4173
+CMD [ "npm", "run", "preview" ]
